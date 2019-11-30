@@ -219,5 +219,7 @@ You should have received a copy of the GNU General Public License along with the
 [^1]: Even though `instant_t` can hold years up to 65536, the parsing and formatting code is limited to years up to and including 9999!
 
 [^2]: When parsing using the `%I` format specifier to indicate a 12-hour time, the format specification ***must*** include an a.m./p.m. specifier (`%p`/`%P`) at some point in the format specification ***after*** the `%I`!
+
 [^3]: When validating an instant with an invalid month, it is impossible to validate the day of month. As a result, validating such an instant will always return both `INSTANT_INVALID_MONTH` and `INSTANT_INVALID_DAY`!
+
 [^4]: `instant_days_of_month()`, `instant_is_leap_year()` and `instant_day_of_week()` are only correct for dates on or after the (possibly local) Gregorian Epoch (`1582-10-15`, or later depending on when and how the Gregorian calendar was introduced in your location).
