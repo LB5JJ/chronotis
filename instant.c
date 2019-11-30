@@ -24,7 +24,7 @@ const char *instant_default_format = INSTANT_DEFAULT_FORMAT;
 
 static const uint8_t month_info[] = {
 	0,				/* Faster and smaller then subtracting 1 when indexing */
-	31 + (0 << 5),	/* January:	  31 regular days, day-of-week offset is 0 */
+	31 + (0 << 5),	/* January:   31 regular days, day-of-week offset is 0 */
 	28 + (3 << 5),	/* February:  28 regular days, day-of-week offset is 3 */
 	31 + (2 << 5),	/* March:     31 regular days, day-of-week offset is 2 */
 	30 + (5 << 5),	/* April:     30 regular days, day-of-week offset is 5 */
@@ -170,6 +170,7 @@ void instant_format(const instant_t *instant, const char *format, char *buffer) 
 				case 'Y': /* 4 digit year, zero padded */
 					pack(buffer, instant->year / 100);
 					buffer += 2;
+					/* fall through */
 				case 'y': /* 2 digit year, zero padded */
 					pack(buffer, instant->year % 100);
 					break;
@@ -209,7 +210,7 @@ void instant_format(const instant_t *instant, const char *format, char *buffer) 
 
 int16_t instant_compare(const instant_t *instant1, const instant_t *instant2) {
 	/* Using the subtraction tricks on 16 bit unsigned values could
-	 * result is a value to small (or large) for a signed 16 bit return
+	 * result is a value too small (or large) for a signed 16 bit return
 	 * type. So we chech years for both smaller and greater! */
 	if (instant1->year > instant2->year)
 		return 1;
