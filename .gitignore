@@ -1,0 +1,8 @@
+tests/compare
+tests/day-of-week
+tests/days-of-month
+tests/format
+tests/is-am-pm
+tests/is-leap-year
+tests/parse
+tests/validate
