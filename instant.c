@@ -14,7 +14,7 @@ warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See
 the GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License along
-with the Chronotis date/time C library. If not, see 
+with the Chronotis date/time C library. If not, see
 <https://www.gnu.org/licenses/>.
 */
 
@@ -214,10 +214,10 @@ int16_t instant_compare(const instant_t *instant1, const instant_t *instant2) {
 	 * type. So we chech years for both smaller and greater! */
 	if (instant1->year > instant2->year)
 		return 1;
-	
+
 	if (instant1->year < instant2->year)
 		return -1;
-	
+
 	if (instant1->month - instant2->month)
 		return instant1->month - instant2->month;
 
@@ -237,9 +237,11 @@ int16_t instant_compare(const instant_t *instant1, const instant_t *instant2) {
 }
 
 uint8_t instant_day_of_week(const instant_t *instant) {
-	if (instant->month < 1 || instant->month > 12) return 0;
-    uint16_t year = instant->year - (instant->month < 3);
-    return (((year + year/4 - year/100 + year/400 + (month_info[instant->month] >> 5) + instant->day) - 1) % 7) + 1;
+	if (instant->month < 1 || instant->month > 12)
+		return 0;
+
+	uint16_t year = instant->year - (instant->month < 3);
+	return (((year + year/4 - year/100 + year/400 + (month_info[instant->month] >> 5) + instant->day) - 1) % 7) + 1;
 }
 
 uint8_t instant_is_leap_year(const instant_t *instant) {
@@ -250,4 +252,3 @@ uint8_t instant_days_of_month(const instant_t *instant) {
 	if (instant->month < 1 || instant->month > 12) return 0;
 	return ((month_info[instant->month] & 0x1f) + (instant->month == 2 && instant_is_leap_year(instant)));
 }
-
