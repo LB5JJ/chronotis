@@ -1,5 +1,4 @@
-/*
-Copyright 2019 Bård Bjerke Johannessen <bbj@bbj.io>
+/* Copyright 2019 Bård Bjerke Johannessen <bbj@bbj.io>
 
 This file is part of the Chronotis date/time C library.
 
@@ -14,9 +13,8 @@ warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See
 the GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License along
-with the Chronotis date/time C library. If not, see 
-<https://www.gnu.org/licenses/>.
-*/
+with the Chronotis date/time C library. If not, see
+<https://www.gnu.org/licenses/>. */
 
 #ifndef INSTANT_H
 #define INSTANT_H

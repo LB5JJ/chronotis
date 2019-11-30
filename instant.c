@@ -1,5 +1,4 @@
-/*
-Copyright 2019 Bård Bjerke Johannessen <bbj@bbj.io>
+/* Copyright 2019 Bård Bjerke Johannessen <bbj@bbj.io>
 
 This file is part of the Chronotis date/time C library.
 
@@ -15,15 +14,14 @@ the GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License along
 with the Chronotis date/time C library. If not, see
-<https://www.gnu.org/licenses/>.
-*/
+<https://www.gnu.org/licenses/>. */
 
 #include "instant.h"
 
 const char *instant_default_format = INSTANT_DEFAULT_FORMAT;
 
 static const uint8_t month_info[] = {
-	0,				/* Faster and smaller then subtracting 1 when indexing */
+	0,		/* Faster and smaller then subtracting 1 when indexing */
 	31 + (0 << 5),	/* January:   31 regular days, day-of-week offset is 0 */
 	28 + (3 << 5),	/* February:  28 regular days, day-of-week offset is 3 */
 	31 + (2 << 5),	/* March:     31 regular days, day-of-week offset is 2 */

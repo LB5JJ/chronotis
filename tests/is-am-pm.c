@@ -1,5 +1,4 @@
-/*
-Copyright 2019 Bård Bjerke Johannessen <bbj@bbj.io>
+/* Copyright 2019 Bård Bjerke Johannessen <bbj@bbj.io>
 
 This file is part of the Chronotis date/time C library.
 
@@ -14,9 +13,8 @@ warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See
 the GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License along
-with the Chronotis date/time C library. If not, see 
-<https://www.gnu.org/licenses/>.
-*/
+with the Chronotis date/time C library. If not, see
+<https://www.gnu.org/licenses/>. */
 
 #include <stdio.h>
 #include "../instant.h"
@@ -28,7 +26,7 @@ uint8_t am(uint16_t idx, instant_t *instant, uint8_t expect) {
 		fprintf(stderr, "Expected: %i\n", expect);
 		fprintf(stderr, "  Result: %i\n\n", instant_is_am(instant));
 
-		return 1;		
+		return 1;
 	}
 
 	return 0;
@@ -41,7 +39,7 @@ uint8_t pm(uint16_t idx, instant_t *instant, uint8_t expect) {
 		fprintf(stderr, "Expected: %i\n", expect);
 		fprintf(stderr, "  Result: %i\n\n", instant_is_pm(instant));
 
-		return 1;		
+		return 1;
 	}
 
 	return 0;

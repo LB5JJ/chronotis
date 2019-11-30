@@ -1,5 +1,4 @@
-/*
-Copyright 2019 Bård Bjerke Johannessen <bbj@bbj.io>
+/* Copyright 2019 Bård Bjerke Johannessen <bbj@bbj.io>
 
 This file is part of the Chronotis date/time C library.
 
@@ -14,9 +13,8 @@ warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See
 the GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License along
-with the Chronotis date/time C library. If not, see 
-<https://www.gnu.org/licenses/>.
-*/
+with the Chronotis date/time C library. If not, see
+<https://www.gnu.org/licenses/>. */
 
 #include <stdio.h>
 #include <string.h>
@@ -30,7 +28,7 @@ uint8_t test_instant_validate(uint16_t idx, instant_t *instant, uint8_t expect) 
 		fprintf(stderr, "  Result: %02x\n", instant_validate(instant));
 		fprintf(stderr, "Expected: %02x\n\n", expect);
 
-		return 1;		
+		return 1;
 	}
 
 	return 0;
@@ -43,7 +41,7 @@ uint8_t test_instant_validate_date(uint16_t idx, instant_t *instant, uint8_t exp
 		fprintf(stderr, "  Result: %02x\n", instant_validate_date(instant));
 		fprintf(stderr, "Expected: %02x\n\n", expect);
 
-		return 1;		
+		return 1;
 	}
 
 	return 0;
@@ -56,7 +54,7 @@ uint8_t test_instant_validate_time(uint16_t idx, instant_t *instant, uint8_t exp
 		fprintf(stderr, "  Result: %02x\n", instant_validate_time(instant));
 		fprintf(stderr, "Expected: %02x\n\n", expect);
 
-		return 1;		
+		return 1;
 	}
 
 	return 0;

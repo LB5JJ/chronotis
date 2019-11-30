@@ -1,5 +1,4 @@
-/*
-Copyright 2019 Bård Bjerke Johannessen <bbj@bbj.io>
+/* Copyright 2019 Bård Bjerke Johannessen <bbj@bbj.io>
 
 This file is part of the Chronotis date/time C library.
 
@@ -14,9 +13,8 @@ warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See
 the GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License along
-with the Chronotis date/time C library. If not, see 
-<https://www.gnu.org/licenses/>.
-*/
+with the Chronotis date/time C library. If not, see
+<https://www.gnu.org/licenses/>. */
 
 #include <stdio.h>
 #include <string.h>
@@ -34,7 +32,7 @@ uint8_t test(uint16_t idx, instant_t *instant, char *expect, const char *format)
 		fprintf(stderr, " Instant: %s\n", instant_str(instant));
 		fprintf(stderr, "  Format: %s\n\n", format);
 
-		return 1;		
+		return 1;
 	}
 
 	return 0;

@@ -1,5 +1,4 @@
-/*
-Copyright 2019 Bård Bjerke Johannessen <bbj@bbj.io>
+/* Copyright 2019 Bård Bjerke Johannessen <bbj@bbj.io>
 
 This file is part of the Chronotis date/time C library.
 
@@ -14,9 +13,8 @@ warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See
 the GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License along
-with the Chronotis date/time C library. If not, see 
-<https://www.gnu.org/licenses/>.
-*/
+with the Chronotis date/time C library. If not, see
+<https://www.gnu.org/licenses/>. */
 
 #include <stdio.h>
 #include "../instant.h"
@@ -29,7 +27,7 @@ uint8_t before(uint16_t idx, instant_t *instant1, instant_t *instant2) {
 		fprintf(stderr, " Expected: true\n");
 		fprintf(stderr, "      Got: false\n\n");
 
-		return 1;		
+		return 1;
 	}
 
 	return 0;
@@ -43,7 +41,7 @@ uint8_t after(uint16_t idx, instant_t *instant1, instant_t *instant2) {
 		fprintf(stderr, "Expected: true\n");
 		fprintf(stderr, "     Got: false\n\n");
 
-		return 1;		
+		return 1;
 	}
 
 	return 0;
@@ -57,7 +55,7 @@ uint8_t equal(uint16_t idx, instant_t *instant1, instant_t *instant2) {
 		fprintf(stderr, "Expected: true\n");
 		fprintf(stderr, "     Got: false\n\n");
 
-		return 1;		
+		return 1;
 	}
 
 	return 0;
