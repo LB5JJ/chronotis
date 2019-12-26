@@ -2,7 +2,7 @@
 
 ## A point in time: `instant_t`
 
-`instant_t` represents a point in time. Is specifies a point in time in the range from the beginning of January 1st year 1 up to the end of December 31st year 65536[^1] with one second resolution. `instant_t` is specified to represent the beginning of the encoded second (that is; second with a fractional part of 0). For applications requiring finer resolution, a separate value representing, milli-, micro- or nano-seconds can easily be maintained alongside the `instant_t`.
+`instant_t` represents a point in time. Is specifies a point in time in the range from the beginning of January 1st year 1 up to the end of December 31st year 65535[^1] with one second resolution. `instant_t` is specified to represent the beginning of the encoded second (that is; second with a fractional part of 0). For applications requiring finer resolution, a separate value representing, milli-, micro- or nano-seconds can easily be maintained alongside the `instant_t`.
 
 ~~~c
 typedef struct {
@@ -58,7 +58,7 @@ The `instant_parse()` and `instant_format()` functions described below used the 
 - `%m` - 2 digit month of year, zero padded (01-12)
 - `%d` - 2 digit day of month, zero padded (01-31)
 - `%H` - 2 digit hour of day (00-23)
-- `%I` - 2 digit hour (01-12) 
+- `%I` - 2 digit hour (01-12)
 - `%M` - 2 digit minute of hour (00-59)
 - `%S` - 2 digit second of minute (00-59)
 - `%p` - a.m./p.m. indicator: `A` for a.m. or `P` for p.m. [^2]
@@ -216,7 +216,7 @@ You should have received a copy of the GNU General Public License along with the
 
 ## Notes
 
-[^1]: Even though `instant_t` can hold years up to 65536, the parsing and formatting code is limited to years up to and including 9999!
+[^1]: Even though `instant_t` can hold years up to 65535, the parsing and formatting code is limited to years up to and including 9999!
 
 [^2]: When parsing using the `%I` format specifier to indicate a 12-hour time, the format specification ***must*** include an a.m./p.m. specifier (`%p`/`%P`) at some point in the format specification ***after*** the `%I`!
 
