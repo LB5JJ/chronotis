@@ -137,9 +137,9 @@ uint8_t instant_validate(const instant_t *instant);
 #define instant_validate_time(instant) (instant_validate(instant) & 0xf0)
 ~~~
 
-The `instant_validate()` function validates an `instant_t`, returning `0` if `instant` is valid or a sum of `INSTALT_INVALID_*` values representing the fields that are invalid. [^3]
+The `instant_validate()` function validates an `instant_t`, returning `0` if `instant` is valid or a sum of `INSTALT_INVALID_*` values representing the fields that are invalid. [^3] [^4]
 
-The `instant_validate_date()` macro validates just the date part of `instant`, returning `0` if `instant` represents a valid date or a sum of `INSTALT_INVALID_*` values representing the date fields that are invalid. [^3]
+The `instant_validate_date()` macro validates just the date part of `instant`, returning `0` if `instant` represents a valid date or a sum of `INSTALT_INVALID_*` values representing the date fields that are invalid. [^3] [^4]
 
 The `instant_validate_time()` macro validates just the time part of `instant`, returning `0` if `instant` represents a valid time or a sum of `INSTALT_INVALID_*` values representing the time fields that are invalid.
 
@@ -222,4 +222,4 @@ You should have received a copy of the GNU General Public License along with the
 
 [^3]: When validating an instant with an invalid month, it is impossible to validate the day of month. As a result, validating such an instant will always return both `INSTANT_INVALID_MONTH` and `INSTANT_INVALID_DAY`!
 
-[^4]: `instant_days_of_month()`, `instant_is_leap_year()` and `instant_day_of_week()` are only correct for dates on or after the (possibly local) Gregorian Epoch (`1582-10-15`, or later depending on when and how the Gregorian calendar was introduced in your location).
+[^4]: `instant_days_of_month()`, `instant_is_leap_year()` and `instant_day_of_week()` are only correct for dates on or after the (possibly local) Gregorian Epoch (`1582-10-15`, or later depending on when and how the Gregorian calendar was introduced in your location). `instant_validate()` and `instant_validate_date()` uses `instant_days_of_month()` internally, and suffers from the same problems with dates before the Gregorian Epoch.
